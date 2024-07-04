@@ -1,0 +1,58 @@
+#principais-estilos{
+    background-color: black;
+    color: white;
+    padding: 20px;
+    margin: 20px 40px;
+    border: 5px solid gold;
+    border-radius: 12px;
+}
+.subtitulo{
+    background-color: gold;
+    color: black;
+}
+.paragrafo{
+    text-align: center;
+    color: gold;
+    line-height: 1.5;
+    font-family: monospace;
+}
+.title{
+    font-weight: 400;
+    font-size: 47px;
+}
+strong{
+    font-size: 15px;
+}
+
+/* alinhando elementos com flexbox
+a propriedade display flex sempre é aplicada no container, ou seja a tag pai  */ 
+/* a propriedade Justfy itens alinha itens na horizontal, já a propriedade align itens alinha itens na vertical. */
+#flexbox .container{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+#flexbox .container .box{
+    background-color: purple;
+    width: 200px;
+    height: 200px;
+    
+}
+#flexbox .container .box2{
+    background-color: gold;
+    width: 200px;
+    height: 300px;
+    
+}
+#grid-layout .container-grid{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+#grid-layout .container-grid .caixa {
+    
+    height: 200px;
+    background-color: blue;
+}
