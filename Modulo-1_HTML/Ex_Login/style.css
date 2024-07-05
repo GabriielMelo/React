@@ -1,0 +1,26 @@
+
+#tela .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#tela .container .login{
+    background-color: purple;
+    height: 250px;
+    width: 250px;
+    padding: 10px;
+}
+input{
+    display: block;
+    margin-bottom: 10px;
+    border-style: groove;
+    background-color: rgb(240, 220, 240);
+    
+    
+}
+.btn{
+    
+
+}
