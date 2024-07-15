@@ -1,3 +1,11 @@
+:root{
+  --bg-color:#0ebeeb;
+  --font-color:#e9e6e6;
+  --btn-bg-color: #35a2ce;
+  
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -5,9 +13,7 @@
 
 body {
   background-color: black;
-
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: 'Heebo',sans-serif ;
 }
 
 .container {
@@ -17,45 +23,52 @@ body {
   height: 100vh;
   padding: 10px;
 }
+
 .conteudo {
-  background-color: #adf029;
+  background-color: var(--bg-color);
+  color:var(--font-color);
   border-radius: 3px;
   height: 180px;
   width: 250px;
   padding: 20px;
   display: block;
 }
+
 .result {
-  background-color: #adf029;
+  background-color: var(--bg-color);
   border-radius: 3px;
   height: 180px;
   width: 250px;
   padding: 20px;
   display: none;
 }
+
 .timer {
-  background-color: #adf029;
+  background-color: var(--bg-color);
   border-radius: 3px;
   height: 180px;
   width: 250px;
   padding: 20px;
   display: none;
 }
+
 .timer p {
   font-size: 20px;
   font-weight: 200;
-  color: #749e1f;
+  color: var(--font-color);
   margin: 77px;
 }
+
 h1 {
   font-weight: 400;
-  font-size: 28px;
+  font-size: 24px;
   margin: 10px 0 20px 0;
 }
+
 h2 {
-  font-weight: 200;
+  font-weight: 400;
   text-align: left;
-  font-size: 18px;
+  font-size: 16px;
   margin: 15px 0px 20px 0px;
 }
 
@@ -64,22 +77,61 @@ h2 {
   margin: 10px 0px;
   display: block;
   width: 230px;
+  border-radius: 6px;
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+}
+
+.text-box::-webkit-input-placeholder{
+  font-family: 'Heebo',sans-serif;
+  font-size: 10px;
 }
 
 .btn {
   padding: 5px;
-  margin: 10px 0px 10px 192px;
+  margin: 10px 0px 10px 196px;
   display: block;
+  border-radius: 10px;
+  background-color: var(--btn-bg-color);
+  font-weight: 500;
+  font-size: 12px;
+  color:var(--font-color);
 
   &:hover {
     cursor: pointer;
-    background-color: #ffffff94;
+    background-color: #aae9b494;
+    color: #151f01;
   }
+}
+
+h1.resultado{
+  font-weight: 300;
+  font-size: 18px;
+  margin: 5px 0 5px 0;
+  color:var(--font-color)
+
 }
 
 p {
   padding: 2px;
   text-decoration: underline;
   text-align: justify;
-  background-color: #4f66200c;
+  color:#053f5a;
+}
+.voltar{
+  margin: 0px 0px 0px 190px;
+  display: block;
+  border-radius: 10px;
+  background-color: var(--btn-bg-color);
+  font-weight: 400;
+  width: 50px;
+  font-size: 22px;
+  color:var(--font-color);
+  font-family: monospace;
+  &:hover {
+    cursor: pointer;
+    background-color: #aae9b494;
+    color: #151f01;
+  }
 }
