@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Consulta de CEP</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="conteudo">
+        <h1>Consulta de cep</h1>
+        <h2>Entre com o cep do endereço:</h2>
+        <input type="text" class="text-box" placeholder="cep" />
+        <input type="submit" class="btn" value="Enviar" onclick="enviarCEP( )" />
+      </div>
+      <div class="timer">
+        <p>Aguarde...</p></div>
+      <div class="result">
+        <h1>Resultado:</h1>
+        <h2 class="cep"></h2>
+
+        <p>Rua : <span class="logradouro"> </span></p>
+        <p>Bairro : <span class="bairro"></span></p>
+        <p>Cidade : <span class="localidade"></span></p>
+        <p>Estado : <span class="uf"></span></p>
+      </div>
+    </div>
+  </body>
+</html>

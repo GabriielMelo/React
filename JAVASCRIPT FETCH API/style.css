@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: black;
+
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 10px;
+}
+.conteudo {
+  background-color: #adf029;
+  border-radius: 3px;
+  height: 180px;
+  width: 250px;
+  padding: 20px;
+  display: block;
+}
+.result {
+  background-color: #adf029;
+  border-radius: 3px;
+  height: 180px;
+  width: 250px;
+  padding: 20px;
+  display: none;
+}
+.timer {
+  background-color: #adf029;
+  border-radius: 3px;
+  height: 180px;
+  width: 250px;
+  padding: 20px;
+  display: none;
+}
+.timer p {
+  font-size: 20px;
+  font-weight: 200;
+  color: #749e1f;
+  margin: 77px;
+}
+h1 {
+  font-weight: 400;
+  font-size: 28px;
+  margin: 10px 0 20px 0;
+}
+h2 {
+  font-weight: 200;
+  text-align: left;
+  font-size: 18px;
+  margin: 15px 0px 20px 0px;
+}
+
+.text-box {
+  padding: 5px;
+  margin: 10px 0px;
+  display: block;
+  width: 230px;
+}
+
+.btn {
+  padding: 5px;
+  margin: 10px 0px 10px 192px;
+  display: block;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #ffffff94;
+  }
+}
+
+p {
+  padding: 2px;
+  text-decoration: underline;
+  text-align: justify;
+  background-color: #4f66200c;
+}
