@@ -1,10 +1,8 @@
-:root{
-  --bg-color:#0ebeeb;
-  --font-color:#e9e6e6;
+:root {
+  --bg-color: #0ebeeb;
+  --font-color: #e9e6e6;
   --btn-bg-color: #35a2ce;
-  
 }
-
 
 * {
   margin: 0;
@@ -13,7 +11,7 @@
 
 body {
   background-color: black;
-  font-family: 'Heebo',sans-serif ;
+  font-family: "Heebo", sans-serif;
 }
 
 .container {
@@ -22,22 +20,24 @@ body {
   justify-content: center;
   height: 100vh;
   padding: 10px;
+  
 }
 
 .conteudo {
   background-color: var(--bg-color);
-  color:var(--font-color);
+  color: var(--font-color);
   border-radius: 3px;
-  height: 180px;
+  height: 200px;
   width: 250px;
   padding: 20px;
   display: block;
+  
 }
 
 .result {
   background-color: var(--bg-color);
   border-radius: 3px;
-  height: 180px;
+  height: 200px;
   width: 250px;
   padding: 20px;
   display: none;
@@ -46,7 +46,7 @@ body {
 .timer {
   background-color: var(--bg-color);
   border-radius: 3px;
-  height: 180px;
+  height: 200px;
   width: 250px;
   padding: 20px;
   display: none;
@@ -73,30 +73,37 @@ h2 {
 }
 
 .text-box {
-  padding: 5px;
   margin: 10px 0px;
   display: block;
+  padding: 5px;
+  border: none;
+  border-bottom: 3px solid var(--btn-bg-color);
+  background-color: var(--bg-color);
   width: 230px;
-  border-radius: 6px;
   &::-webkit-inner-spin-button {
     appearance: none;
   }
+  &:focus {
+    border: none;
+    outline: none;
+    border-bottom: 3px solid var(--btn-bg-color);
+  }
 }
 
-.text-box::-webkit-input-placeholder{
-  font-family: 'Heebo',sans-serif;
-  font-size: 10px;
+.text-box::-webkit-input-placeholder {
+  font-family: "Heebo", sans-serif;
+  font-size: 15px;
 }
 
 .btn {
   padding: 5px;
-  margin: 10px 0px 10px 196px;
+  margin: 20px 0px 10px 196px;
   display: block;
   border-radius: 10px;
   background-color: var(--btn-bg-color);
   font-weight: 500;
   font-size: 12px;
-  color:var(--font-color);
+  color: var(--font-color);
 
   &:hover {
     cursor: pointer;
@@ -105,33 +112,37 @@ h2 {
   }
 }
 
-h1.resultado{
+h1.resultado {
   font-weight: 300;
   font-size: 18px;
   margin: 5px 0 5px 0;
-  color:var(--font-color)
-
+  color: #053f5a;
 }
 
 p {
-  padding: 2px;
+  padding: 1px;
   text-decoration: underline;
   text-align: justify;
-  color:#053f5a;
+  color: #053f5a;
+  font-size: 14px;
 }
-.voltar{
-  margin: 0px 0px 0px 190px;
+.voltar {
+  margin: 10px 0px 0px 203px;
   display: block;
   border-radius: 10px;
   background-color: var(--btn-bg-color);
   font-weight: 400;
   width: 50px;
   font-size: 22px;
-  color:var(--font-color);
+  color: var(--font-color);
   font-family: monospace;
   &:hover {
     cursor: pointer;
     background-color: #aae9b494;
     color: #151f01;
   }
+}
+.info {
+  border-bottom: 3px solid var(--btn-bg-color);
+  padding-bottom: 10px;
 }

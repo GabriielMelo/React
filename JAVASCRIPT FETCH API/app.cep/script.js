@@ -14,6 +14,12 @@ function enviarCEP() {
   obterDadosdoCEP(cep);
 }
 
+function enviarCEPEnter(event) {
+  if (event.key === "Enter") {
+    enviarCEP();
+  }
+}
+
 async function obterDadosdoCEP(cep) {
   const urlAPI = `https://viacep.com.br/ws/${cep}/json/`;
   try {
@@ -34,10 +40,15 @@ function preencherCampos(dados) {
 }
 
 function voltar() {
-  let text = document.querySelector('.text-box')
+  let text = document.querySelector(".text-box");
   text.value = "";
   let result = document.querySelector(".result");
   result.style.display = "none";
   let conteudo = document.querySelector(".conteudo");
   conteudo.style.display = "block";
+
+  document.querySelector(".logradouro").innerHTML = "";
+  document.querySelector(".bairro").innerHTML = "";
+  document.querySelector(".localidade").innerHTML = "";
+  document.querySelector(".uf").innerHTML = "";
 }
