@@ -12,12 +12,7 @@
 
 body {
   background-color: black;
-  /* font-family: "Heebo", sans-serif; */
-  /* font-family: monospace; */
-  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
-  /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- 
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -36,6 +31,7 @@ body {
   width: 250px;
   padding: 20px;
   display: block;
+  box-shadow: 2px 2px 16px 7px var(--font-color);
 }
 
 .result {

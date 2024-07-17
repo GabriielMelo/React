@@ -52,3 +52,4 @@ function voltar() {
   document.querySelector(".localidade").innerHTML = "";
   document.querySelector(".uf").innerHTML = "";
 }
+
