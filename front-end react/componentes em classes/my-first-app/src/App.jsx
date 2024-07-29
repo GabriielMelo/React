@@ -1,22 +1,16 @@
 import React from "react";
-// import article1 from "../src/assets/images/article1.png";
-// import article2 from "../src/assets/images/article2.png";
-// import article3 from "../src/assets/images/article3.png";
-// import { Article } from "./components/article/Article";
-import { Counter } from "./components/counter/Counter";
-import { Navbar } from "./components/navbar/Navbar";
 
+import { Counter } from "./components/counter/Counter";
 import "./styles/App.css";
 class App extends React.Component {
   render() {
     return (
       // tag fragment  <> </> o react não aceita mais de um componente se nao estiverem envolvidos em uma tag, a tag fragment envolve os componentes.
       <>
-        <Navbar />
-
         <Counter />
 
-        {/* <section id="articles">
+        {/* <Navbar />
+        <section id="articles">
           <Article
             title="Designing Dashboards"
             provider="NASA"
@@ -50,7 +44,8 @@ class App extends React.Component {
   }
 }
 export default App;
-
 // No React devemos importar a imagem antes de utilizar no src da tag
 // Para renderizar o conteudo HTML utilizamos o Método RENDER();
 // um componente em classe é uma classe que herda a classe Component do React e retorna um HTML dentro do método Render
+
+//Componente funcional é uma função que retorna HTML
