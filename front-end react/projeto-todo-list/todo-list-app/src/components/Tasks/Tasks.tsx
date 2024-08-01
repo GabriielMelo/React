@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useState } from "react";
-import styles from "./styles.module.scss";
+import styles from "./tasksStyles.module.scss";
 
 interface Task {
   title: string;

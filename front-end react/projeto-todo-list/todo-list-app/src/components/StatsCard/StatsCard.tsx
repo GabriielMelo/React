@@ -1,4 +1,4 @@
-import styles from "./styles.module.scss";
+import styles from "./statsCardStyles.module.scss";
 
 interface StatsCardProps {
   title: string;
