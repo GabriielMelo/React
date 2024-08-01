@@ -1,15 +1,18 @@
 import React from "react";
-
-import { Counter } from "./components/counter/Counter";
+import article1 from "../src/assets/images/article1.png";
+import article2 from "../src/assets/images/article2.png";
+import article3 from "../src/assets/images/article3.png";
+import { Article } from "./components/article/Article";
+import { Navbar } from "./components/navbar/Navbar";
 import "./styles/App.css";
 class App extends React.Component {
   render() {
     return (
       // tag fragment  <> </> o react não aceita mais de um componente se nao estiverem envolvidos em uma tag, a tag fragment envolve os componentes.
       <>
-        <Counter />
+     
 
-        {/* <Navbar />
+        <Navbar />
         <section id="articles">
           <Article
             title="Designing Dashboards"
@@ -38,7 +41,7 @@ class App extends React.Component {
             description=" Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia consequatur recusandae, qui praesentium nam sapiente accusamus temporibus eum non, eius consequuntur nisi hic nesciunt ducimus fugit placeat aliquam laudantium! Ea."
             thumbnail={article1}
           />
-        </section> */}
+        </section>
       </>
     );
   }
