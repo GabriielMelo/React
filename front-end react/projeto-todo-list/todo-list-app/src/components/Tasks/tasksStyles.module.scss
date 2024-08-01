@@ -44,7 +44,9 @@ ul {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-
+    border: 1px solid black;
+    padding: 10px 5px;
+    margin: 10px auto;
     input {
       height: 1rem;
       width: 1rem;
