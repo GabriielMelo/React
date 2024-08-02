@@ -1,4 +1,5 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useContext, useEffect, useState } from "react";
+import { TasksContext } from "../../context/TasksContext";
 import styles from "./tasksStyles.module.scss";
 
 interface Task {
@@ -9,6 +10,9 @@ interface Task {
 export const Tasks: React.FC = () => {
   const [taskTitle, setTaskTitle] = useState("");
   const [tasks, setTasks] = useState([] as Task[]);
+
+  const variavel = useContext(TasksContext);
+
   //Função disparada quando o usuario submete o formulario para adicionar uma nova tarefa
   function hendleSubmitAddTask(event: FormEvent) {
     event.preventDefault();

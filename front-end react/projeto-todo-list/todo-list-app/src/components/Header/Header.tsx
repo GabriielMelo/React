@@ -1,7 +1,7 @@
 import { StatsCard } from "../StatsCard/StatsCard";
 import styles from "./headerStyles.module.scss";
 
-// Ao criar componentes com arrow functions, podemos tipar ele para Funcional Components, assim será definido como componente react, sempre solicitando um retorn HTML
+// Ao criar componentes com arrow functions, podemos tipar ele para Funcional Components, assim será definido como componente react, sempre solicitando um return HTML
 export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
