@@ -43,6 +43,7 @@ ul {
   li {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 0.5rem;
     border: 1px solid black;
     padding: 10px 5px;
@@ -54,5 +55,20 @@ ul {
     label {
       font-size: 1.1rem;
     }
+    button {
+      padding: 10px;
+      &:hover{
+        cursor: pointer;
+      }
+    }
   }
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.tasks {
+  background-color: #08c408;
+  color: white;
 }

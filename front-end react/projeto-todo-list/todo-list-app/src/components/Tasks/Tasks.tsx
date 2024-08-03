@@ -1,19 +1,12 @@
-import { FormEvent, useContext, useEffect, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import { TasksContext } from "../../context/TasksContext";
 import styles from "./tasksStyles.module.scss";
 
-interface Task {
-  title: string;
-  done: boolean;
-  id: number;
-}
 export const Tasks: React.FC = () => {
   const [taskTitle, setTaskTitle] = useState("");
-  const [tasks, setTasks] = useState([] as Task[]);
 
-  const variavel = useContext(TasksContext);
+  const { tasks, setTasks, handleToggleTaskStatus } = useContext(TasksContext);
 
-  //Função disparada quando o usuario submete o formulario para adicionar uma nova tarefa
   function hendleSubmitAddTask(event: FormEvent) {
     event.preventDefault();
     console.log(taskTitle);
@@ -22,9 +15,9 @@ export const Tasks: React.FC = () => {
       return;
     }
     const newTasks = [
-      ...tasks, // Pega todas as tarefas que já existiam e coloca nesse novo valor do estado de tarefas
+      ...tasks,
       {
-        id: new Date().getTime(), // valor genérico gerado através da hora atual para criar um id
+        id: new Date().getTime(),
         title: taskTitle,
         done: false,
       },
@@ -34,12 +27,15 @@ export const Tasks: React.FC = () => {
     setTaskTitle("");
   }
 
-  useEffect(() => {
-    const tasksOnLocalStorage = localStorage.getItem("tasks");
-    if (tasksOnLocalStorage) {
-      setTasks(JSON.parse(tasksOnLocalStorage));
+  function handleRemoveTasks(taskID: number) {
+    const answer = window.confirm("Deseja remover a tarefa?");
+    if (!answer) {
+      return;
     }
-  }, []);
+    const newTasks = tasks.filter((task) => task.id !== taskID);
+    localStorage.setItem("tasks", JSON.stringify(newTasks));
+    setTasks(newTasks);
+  }
 
   return (
     <section className={styles.container}>
@@ -62,9 +58,25 @@ export const Tasks: React.FC = () => {
       <ul>
         {tasks.map((task) => {
           return (
-            <li key={task.id}>
-              <input type="checkbox" name="" id={`task-${task.id}`} />
-              <label htmlFor="task">{task.title}</label>
+            <li key={task.id} className={task.done ? styles.tasks : ""}>
+              <input
+                type="checkbox"
+                name=""
+                id={`task-${task.id}`}
+                onChange={() => {
+                  handleToggleTaskStatus(task.id);
+                }}
+              />
+              <label className={task.done ? styles.done : ""} htmlFor="task">
+                {task.title}
+              </label>
+              <button
+                onClick={() => {
+                  handleRemoveTasks(task.id);
+                }}
+              >
+                Remover Tarefa
+              </button>
             </li>
           );
         })}
