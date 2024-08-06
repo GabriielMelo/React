@@ -9,7 +9,7 @@ export const Wraper = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto;
   padding: 0 2rem;
   height: 60px;
