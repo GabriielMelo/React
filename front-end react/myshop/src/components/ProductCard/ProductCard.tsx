@@ -1,6 +1,9 @@
 import { FaRegStar, FaStar } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
+import { useDispatch, useSelector } from "react-redux";
 import { Product } from "../../data/products";
+import { addProduct, removeProduct } from "../../redux/Cart/Cart-Slice";
+import { RootReducer } from "../../redux/root-reducer";
 import * as S from "./productCardStyle";
 
 interface ProductCardProps {
@@ -8,6 +11,22 @@ interface ProductCardProps {
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const { cart } = useSelector(
+    (rootReducer: RootReducer) => rootReducer.cartReducer
+  );
+
+  const dispatch = useDispatch();
+  const isProductOnCart =
+    cart.find((productOnCart) => product.id === productOnCart.id) !== undefined;
+
+  function handleAddProductToCart() {
+    dispatch(addProduct(product));
+  }
+
+  function handleRemoveProductFromCart() {
+    dispatch(removeProduct(product));
+  }
+
   return (
     <S.Card>
       <S.ProductImage src={product.image} alt={product.description} />
@@ -26,9 +45,15 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <S.Price>${product.price}</S.Price>
       </S.ReviewPriceContainer>
       <S.WrapperButton>
-        <S.AddToCartButton>
-          Adicionar ao Carrinho <FiShoppingCart />
-        </S.AddToCartButton>
+        {isProductOnCart ? (
+          <S.RemoveFromCartButton onClick={handleRemoveProductFromCart}>
+            Remover do Carriho <FiShoppingCart />
+          </S.RemoveFromCartButton>
+        ) : (
+          <S.AddToCartButton onClick={handleAddProductToCart}>
+            Adicionar ao Carrinho <FiShoppingCart />
+          </S.AddToCartButton>
+        )}
       </S.WrapperButton>
     </S.Card>
   );

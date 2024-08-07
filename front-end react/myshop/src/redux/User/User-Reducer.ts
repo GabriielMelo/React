@@ -1,3 +1,5 @@
+// Reducers modo Redux Core(antigo)
+
 interface User {
   name: string;
   email: string;
@@ -27,7 +29,7 @@ export function userReducer(
       ...state,
       user: action.payload as User,
     };
-  } else if (action.type === "user.logout") {
+  } else if (action.type === "user/logout") {
     return {
       ...state,
       user: null,

@@ -3,6 +3,7 @@ import { FiLogIn, FiLogOut, FiShoppingCart } from "react-icons/fi";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootReducer } from "../../redux/root-reducer";
+import { login, logout } from "../../redux/User/User-Slice";
 import { Cart } from "../Cart/Cart";
 import * as S from "./styledHeader";
 
@@ -16,23 +17,36 @@ export const Header: React.FC = () => {
   const isLogged = user !== null;
 
   const dispatch = useDispatch();
-
   function handleUserAuth() {
     if (user === null) {
-      // despachar a action de login
-      dispatch({
-        type: "user/login",
-        payload: {
+      dispatch(
+        login({
           name: "Gabriel Melo",
           email: "Gabriel@gmail.com",
-        },
-      });
+        })
+      );
     } else {
-      dispatch({
-        type: "user/logout",
-      });
+      dispatch(logout({}));
     }
   }
+
+  // Redux Core (modo antigo)
+  // function handleUserAuth() {
+  //   if (user === null) {
+  //      despachar a action de login
+  //     dispatch({
+  //       type: "user/login",
+  //       payload: {
+  //         name: "Gabriel Melo",
+  //         email: "Gabriel@gmail.com",
+  //       },
+  //     });
+  //   } else {
+  //     dispatch({
+  //       type: "user/logout",
+  //     });
+  //   }
+  // }
 
   return (
     <S.StyledHeader>
