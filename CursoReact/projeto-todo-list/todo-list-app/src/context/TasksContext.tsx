@@ -10,7 +10,7 @@ interface Task {
 
 interface TasksProviderProps {
   children: React.ReactNode;
-}
+} 
 
 interface TasksContextData {
   tasks: Task[];
