@@ -1,0 +1,32 @@
+.header {
+  background-color: #1d1d1d;
+  height: 160px;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0px;
+  div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 18px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 300;
+    }
+    span {
+      font-size: 18px;
+      font-family: "Poppins", sans-serif;
+    }
+  }
+  div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6rem;
+    text-align: center;
+    transform: translateY(1%);
+  }
+}
