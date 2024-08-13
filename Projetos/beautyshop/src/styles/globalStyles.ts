@@ -14,5 +14,6 @@ h1{
 }
 body{
     font-family: "Ysabeau", sans-serif;
+    background-color: #F2B0F5;
 }
 `;

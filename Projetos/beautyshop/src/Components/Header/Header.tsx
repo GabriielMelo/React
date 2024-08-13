@@ -1,5 +1,7 @@
 // import { CiShoppingCart } from "react-icons/ci";
+
 import * as s from "./headerStyles";
+
 export const Header: React.FC = () => {
   return (
     <s.Header>
