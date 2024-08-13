@@ -31,8 +31,8 @@ export const Card = styled.article`
   border-radius: 5px;
   box-shadow: 2px 2px 12px pink;
   img {
-    width: 230px;
-    height: 220px;
+    min-width: 230px;
+    min-height: 220px;
     background-color: white;
     border-radius: 5px;
   }
