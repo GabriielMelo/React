@@ -8,7 +8,7 @@ export const PageContainer = styled.main`
 
 export const CardContainer = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
   width: 1000px;
   background-color: white;
@@ -16,23 +16,13 @@ export const CardContainer = styled.section`
   margin-top: 5px;
   padding: 25px;
   border-radius: 5px;
-  div {
-    width: 230px;
-    height: 300px;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    font-weight: 600;
-  }
+  
 `;
 
 export const Card = styled.article`
-  width: 230px;
-  height: 350px;
-  background-color: white ;
+  min-width: 230px;
+  min-height: 350px;
+  background-color: white;
   color: black;
   display: flex;
   justify-content: center;
@@ -41,6 +31,7 @@ export const Card = styled.article`
   font-weight: 600;
   flex-direction: column;
   border-radius: 5px;
+  box-shadow: 2px 2px 12px pink;
   img {
     width: 230px;
     height: 220px;
@@ -61,9 +52,13 @@ export const Category = styled.span`
 `;
 export const btnAddCart = styled.button`
   width: 210px;
-  padding: 10px;
+  padding: 10px 5px;
   border: none;
   background-color: pink;
+  color: gray;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 17px;
   border-radius: 10px;
   cursor: pointer;
 `;
