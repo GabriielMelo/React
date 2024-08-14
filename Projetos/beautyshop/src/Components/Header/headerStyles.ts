@@ -18,9 +18,40 @@ export const HeaderContainer = styled.div`
   padding: 10px 20px;
   background-color: pink;
   border-radius: 0px 0px 5px 5px;
-
-  
-
+  @media (max-width: 1200px) {
+    width: 950px;
+    h1 {
+      font-size: 36px;
+    }
+  }
+  @media (max-width: 768px) {
+    width: 600px;
+    h1 {
+      font-size: 26px;
+    }
+    input {
+      width: 120px;
+    }
+    button {
+      width: 60px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  @media (max-width: 480px) {
+    width: 350px;
+    h1 {
+      font-size: 20px;
+    }
+    input {
+      width: 100px;
+    }
+    button {
+      width: 50px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
   div:last-child {
     display: flex;
     gap: 10px;
@@ -29,7 +60,6 @@ export const HeaderContainer = styled.div`
 
 //*** Titulos e subtitulos
 export const PageTitle = styled.h1`
-  font-size: 35px;
   padding-bottom: 12px;
 `;
 
@@ -49,9 +79,9 @@ export const CartButton = styled.button`
   color: black;
   cursor: pointer;
   display: flex;
-  svg{
+  svg {
     font-size: 18px;
-    
+
     color: white;
   }
 `;

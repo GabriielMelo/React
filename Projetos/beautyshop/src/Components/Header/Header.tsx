@@ -52,6 +52,10 @@ export const Header: React.FC = () => {
               <s.LoginButton
                 onClick={(e) => {
                   e.preventDefault();
+                  if (inputValue.length < 3) {
+                    window.alert("Invalid User");
+                    return;
+                  }
                   setLogin({
                     name: inputValue,
                     logged: !login.logged,

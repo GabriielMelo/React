@@ -40,12 +40,12 @@ export const Card = styled.article`
 
 export const ProductTitle = styled.h3`
   font-family: "Dancing Script", cursive;
-  font-size: 26px;
+  font-size: 21px;
   margin-top: 5px;
 `;
 export const Category = styled.span`
   margin-top: -10px;
-  font-size: 20px;
+  font-size: 14px;
   padding: 10px;
 `;
 export const btnAddCart = styled.button`
@@ -59,4 +59,5 @@ export const btnAddCart = styled.button`
   font-size: 17px;
   border-radius: 10px;
   cursor: pointer;
+  margin-bottom: 15px;
 `;
