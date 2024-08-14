@@ -1,3 +1,4 @@
+import { Cart } from "./Components/Cart/Cart";
 import { Header } from "./Components/Header/Header";
 import { PageLayout } from "./Components/PageLayout/PageLayout";
 import { products } from "./data/products";
@@ -7,6 +8,7 @@ function App() {
     <>
       <Header />
       <PageLayout product={products} />
+      {/* <Cart /> */}
       <GlobalStyles />
     </>
   );
