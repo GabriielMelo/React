@@ -1,6 +1,7 @@
 export interface Products {
   id: number;
   title: string;
+  price: number;
   thumbnail: string;
   tags: {
     tag1: string;
@@ -11,6 +12,7 @@ export interface Products {
 interface ProductsProps {
   id: number;
   title: string;
+  price: number;
   thumbnail: string;
   tags: string[];
 }
@@ -893,6 +895,7 @@ export const products: Products[] = mockProducts.map(
   (product: ProductsProps) => ({
     id: product.id,
     title: product.title,
+    price: product.price,
     thumbnail: product.thumbnail,
     tags: {
       tag1: product.tags[0],

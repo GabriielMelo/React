@@ -1,4 +1,6 @@
+import { useDispatch } from "react-redux";
 import { Products } from "../../data/products";
+import { addProduct } from "../../redux/CartReducer/Cart-Slice";
 import * as s from "./pageLayoutStyle";
 
 interface ProductsProps {
@@ -6,6 +8,12 @@ interface ProductsProps {
 }
 
 export const PageLayout: React.FC<ProductsProps> = ({ product }) => {
+  const dispatch = useDispatch();
+
+  function handleAddProductToCart() {
+    dispatch(addProduct(product));
+  }
+
   return (
     <div>
       <s.PageContainer>
@@ -18,7 +26,9 @@ export const PageLayout: React.FC<ProductsProps> = ({ product }) => {
                 <s.Category>
                   {product.tags.tag1} - {product.tags.tag2}
                 </s.Category>
-                <s.btnAddCart>Add to Cart</s.btnAddCart>
+                <s.btnAddCart onClick={handleAddProductToCart}>
+                  Add to Cart
+                </s.btnAddCart>
               </s.Card>
             );
           })}

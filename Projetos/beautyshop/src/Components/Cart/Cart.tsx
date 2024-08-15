@@ -1,26 +1,45 @@
 import { CiCircleRemove } from "react-icons/ci";
+import { useDispatch, useSelector } from "react-redux";
+import { Products } from "../../data/products";
+import { removeProduct } from "../../redux/CartReducer/Cart-Slice";
+import { RootReducer } from "../../redux/root/rootReducer";
 import * as s from "./cartStyle";
 
-export const Cart: React.FC = () => {
+interface CartProps {
+  product: Products[];
+  showCart: boolean;
+}
+
+export const Cart: React.FC<CartProps> = ({ product, showCart }) => {
+  const { cart } = useSelector(
+    (rootReducer: RootReducer) => rootReducer.cartReducer
+  );
+  const dispatch = useDispatch();
+
+  function handleRemoveProductFromCart() {
+    dispatch(removeProduct(product));
+  }
+
   return (
     <s.CartContainer>
       <s.CloseCartButton>
         <CiCircleRemove />
       </s.CloseCartButton>
       <s.Title>Products in your bag</s.Title>
-      <s.Product>
-        <img
-          src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/thumbnail.png"
-          alt=""
-        />
-        <div>
-          <s.ProductTitle>Batom</s.ProductTitle>
-          <s.ProductPrice>4,99</s.ProductPrice>
-        </div>
-        <s.RemoveButton>
-          <CiCircleRemove />
-        </s.RemoveButton>
-      </s.Product>
+      {cart.map((product) => {
+        return (
+          <s.Product key={product.id}>
+            <img src={product.thumbnail} alt="" />
+            <div>
+              <s.ProductTitle>{product.title}</s.ProductTitle>
+              <s.ProductPrice>${product.price}</s.ProductPrice>
+            </div>
+            <s.RemoveButton onClick={handleRemoveProductFromCart}>
+              <CiCircleRemove />
+            </s.RemoveButton>
+          </s.Product>
+        );
+      })}
     </s.CartContainer>
   );
 };
