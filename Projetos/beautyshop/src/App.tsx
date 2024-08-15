@@ -10,7 +10,7 @@ function App() {
   return (
     <Provider store={store}>
       <Header />
-      <PageLayout product={products} />
+      <PageLayout />
       <Cart product={products} showCart={false} />
       <GlobalStyles />
     </Provider>
