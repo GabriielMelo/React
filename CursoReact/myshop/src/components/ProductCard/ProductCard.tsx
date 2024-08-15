@@ -47,7 +47,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <S.WrapperButton>
         {isProductOnCart ? (
           <S.RemoveFromCartButton onClick={handleRemoveProductFromCart}>
-            Remover do Carriho <FiShoppingCart />
+            Remover do Carrinho <FiShoppingCart />
           </S.RemoveFromCartButton>
         ) : (
           <S.AddToCartButton onClick={handleAddProductToCart}>
