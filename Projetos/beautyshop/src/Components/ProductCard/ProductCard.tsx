@@ -24,7 +24,7 @@ export const ProductCard: React.FC<ProductProps> = ({ product }) => {
     if (storedProducts) {
       dispatch(localStorageProducts(JSON.parse(storedProducts)));
     }
-  }, []);
+  }, [dispatch]);
 
   function handleAddProduct() {
     dispatch(addProduct(product));
