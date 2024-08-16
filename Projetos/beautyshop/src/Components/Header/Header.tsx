@@ -1,6 +1,6 @@
 import { CiShoppingCart } from "react-icons/ci";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggleCart } from "../../redux/CartReducer/Cart-Slice";
 import * as s from "./headerStyles";
@@ -18,6 +18,14 @@ export const Header: React.FC = () => {
   function handleOpenCart() {
     dispatch(toggleCart());
   }
+
+  useEffect(() => {
+    const logged = localStorage.getItem("logged");
+    if (logged) {
+      setLogin(JSON.parse(logged));
+    }
+  }, [setLogin]);
+
   return (
     <s.Header>
       <s.HeaderContainer>
@@ -42,16 +50,17 @@ export const Header: React.FC = () => {
                   name: "",
                   logged: !login.logged,
                 });
+                localStorage.setItem("logged", JSON.stringify(login));
               }}
             >
               Logout
             </s.LogoutButton>
           </s.CartContainer>
           <s.FormLogin isLogged={login.logged}>
-            <s.LabelLogin>Login</s.LabelLogin>
+            <s.LabelLogin>Enter with your name</s.LabelLogin>
             <div>
               <s.InputUser
-                placeholder="Digite seu nome"
+                placeholder="Sophie.."
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
               ></s.InputUser>
@@ -67,6 +76,7 @@ export const Header: React.FC = () => {
                     logged: !login.logged,
                   });
                   setInputValue("");
+                  localStorage.setItem("logged", JSON.stringify(login));
                 }}
               >
                 Acessar

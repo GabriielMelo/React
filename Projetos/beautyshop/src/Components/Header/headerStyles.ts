@@ -40,7 +40,7 @@ export const HeaderContainer = styled.div`
     }
   }
   @media (max-width: 480px) {
-    width: 350px;
+    width: 480px;
     h1 {
       font-size: 20px;
     }
@@ -80,9 +80,10 @@ export const CartButton = styled.button`
   color: black;
   cursor: pointer;
   display: flex;
+  align-items: center;
+  justify-content: center;
   svg {
     font-size: 18px;
-
     color: white;
   }
 `;
@@ -111,6 +112,7 @@ export const InputUser = styled.input`
   padding: 7px 10px;
   border-radius: 5px;
   font-family: inherit;
+  font-size: 16px;
 `;
 
 export const LoginButton = styled.button`
