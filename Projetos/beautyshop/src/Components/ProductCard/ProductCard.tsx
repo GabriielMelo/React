@@ -1,7 +1,6 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Products } from "../../data/products";
 import { addProduct } from "../../redux/CartReducer/Cart-Slice";
-import { RootReducer } from "../../redux/root/rootReducer";
 import * as s from "./productCardstyles";
 
 interface ProductProps {
@@ -9,15 +8,12 @@ interface ProductProps {
 }
 
 export const ProductCard: React.FC<ProductProps> = ({ product }) => {
-  const { cart } = useSelector(
-    (rootReducer: RootReducer) => rootReducer.cartReducer
-  );
-
   const dispatch = useDispatch();
 
   function handleAddProductToCart() {
     dispatch(addProduct(product));
   }
+
   return (
     <s.Card>
       <img src={product.thumbnail} alt="" />

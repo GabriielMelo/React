@@ -16,9 +16,9 @@ export const Cart: React.FC<CartProps> = ({ product, showCart }) => {
   );
   const dispatch = useDispatch();
 
-  function handleRemoveProductFromCart() {
-    dispatch(removeProduct(product));
-  }
+  const totalCart = cart.reduce((total, product) => {
+    return total + product.price;
+  }, 0);
 
   return (
     <s.CartContainer>
@@ -26,20 +26,29 @@ export const Cart: React.FC<CartProps> = ({ product, showCart }) => {
         <CiCircleRemove />
       </s.CloseCartButton>
       <s.Title>Products in your bag</s.Title>
-      {cart.map((product) => {
-        return (
-          <s.Product key={product.id}>
-            <img src={product.thumbnail} alt="" />
-            <div>
-              <s.ProductTitle>{product.title}</s.ProductTitle>
-              <s.ProductPrice>${product.price}</s.ProductPrice>
-            </div>
-            <s.RemoveButton onClick={handleRemoveProductFromCart}>
-              <CiCircleRemove />
-            </s.RemoveButton>
-          </s.Product>
-        );
-      })}
+      <s.ProductsInCartContainer>
+        {cart.map((product) => {
+          return (
+            <s.Product key={product.id}>
+              <img src={product.thumbnail} alt="" />
+              <div>
+                <s.ProductTitle>{product.title}</s.ProductTitle>
+                <s.ProductPrice>${product.price}</s.ProductPrice>
+              </div>
+              <s.RemoveButton onClick={() => dispatch(removeProduct(product))}>
+                <CiCircleRemove />
+              </s.RemoveButton>
+            </s.Product>
+          );
+        })}
+      </s.ProductsInCartContainer>
+      {totalCart === 0 ? (
+        ""
+      ) : (
+        <s.TotalPrice>Total : R${totalCart.toFixed(2)}</s.TotalPrice>
+      )}
+
+      <s.btnBuy>Finalizar Compra</s.btnBuy>
     </s.CartContainer>
   );
 };
