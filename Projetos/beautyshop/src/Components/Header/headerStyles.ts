@@ -32,7 +32,8 @@ export const HeaderContainer = styled.div`
     input {
       width: 120px;
     }
-    button {
+
+    button:last-child {
       width: 60px;
       font-size: 14px;
       font-weight: 500;

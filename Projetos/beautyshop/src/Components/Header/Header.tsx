@@ -1,6 +1,8 @@
 import { CiShoppingCart } from "react-icons/ci";
 
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toggleCart } from "../../redux/CartReducer/Cart-Slice";
 import * as s from "./headerStyles";
 
 interface LoginStatus {
@@ -12,6 +14,10 @@ export const Header: React.FC = () => {
   const [login, setLogin] = useState({} as LoginStatus);
   const [inputValue, setInputValue] = useState("");
 
+  const dispatch = useDispatch();
+  function handleOpenCart() {
+    dispatch(toggleCart());
+  }
   return (
     <s.Header>
       <s.HeaderContainer>
@@ -27,7 +33,7 @@ export const Header: React.FC = () => {
         </div>
         <div>
           <s.CartContainer isLogged={login.logged}>
-            <s.CartButton>
+            <s.CartButton onClick={handleOpenCart}>
               <CiShoppingCart />
             </s.CartButton>
             <s.LogoutButton

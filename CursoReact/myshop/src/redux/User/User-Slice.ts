@@ -12,7 +12,7 @@ interface UserState {
 const initialState: UserState = {
   user: null,
 };
-
+  
 export const UserSlice = createSlice({
   name: "user",
   initialState: initialState,

@@ -1,8 +1,6 @@
 import { styled } from "styled-components";
 
 export const Card = styled.article`
-  min-width: 230px;
-  min-height: 350px;
   background-color: white;
   color: black;
   display: flex;
@@ -13,6 +11,9 @@ export const Card = styled.article`
   flex-direction: column;
   border-radius: 5px;
   box-shadow: 2px 2px 12px pink;
+
+ 
+
   img {
     min-width: 230px;
     min-height: 220px;
@@ -31,12 +32,29 @@ export const Category = styled.span`
   font-size: 14px;
   padding: 10px;
 `;
-export const btnAddCart = styled.button`
+export const BtnAddCart = styled.button`
   width: 210px;
   padding: 10px 5px;
   border: none;
   background-color: pink;
   color: gray;
+  font-weight: 600;
+  font-family: inherit;
+  font-size: 17px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 15px;
+`;
+export const PriceInfo = styled.span`
+  font-size: 18px;
+  font-weight: 600;
+`;
+export const BtnRemoveCart = styled.button`
+  width: 210px;
+  padding: 10px 5px;
+  border: none;
+  background-color: red;
+  color: black;
   font-weight: 600;
   font-family: inherit;
   font-size: 17px;

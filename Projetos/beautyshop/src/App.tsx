@@ -11,7 +11,7 @@ function App() {
     <Provider store={store}>
       <Header />
       <PageLayout />
-      <Cart product={products} showCart={false} />
+      <Cart product={products} />
       <GlobalStyles />
     </Provider>
   );

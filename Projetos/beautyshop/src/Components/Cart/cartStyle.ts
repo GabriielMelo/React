@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
-export const CartContainer = styled.aside`
+interface CartProps {
+  cartOpen: boolean;
+}
+
+export const CartContainer = styled.aside<CartProps>`
   position: fixed;
   top: 0;
-  right: 0px;
+  right: ${(props) => (props.cartOpen ? "0" : "-350px")};
+  transition: right 1.5s;
   height: 100vh;
   width: 250px;
-  background-color: white;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   border-left: 3px solid pink;
@@ -60,20 +65,24 @@ export const RemoveButton = styled.button`
 
 export const CloseCartButton = styled.button`
   border: none;
-  font-size: 30px;
-  margin-top: 10px;
+  font-size: 25px;
   color: red;
   cursor: pointer;
   position: absolute;
-  right: 236px;
+  right: 223px;
+  top: 1px;
   background-color: transparent;
 
+  @media (max-width: 480px) {
+    font-size: 40px;
+  }
   svg {
-    background-color: red;
+    background-color: #a82af5;
     border-radius: 50%;
     color: white;
   }
 `;
+
 export const TotalPrice = styled.span`
   font-size: 22px;
   font-weight: 600;
@@ -91,4 +100,15 @@ export const btnBuy = styled.button`
   color: white;
   margin: 10px;
   text-align: center;
+`;
+
+export const PaymentWrapper = styled.div`
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+  margin-top: 5px;
+  
+  button {
+    width: 90%;
+  }
 `;
