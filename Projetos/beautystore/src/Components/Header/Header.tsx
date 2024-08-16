@@ -1,6 +1,5 @@
-import { CiShoppingCart } from "react-icons/ci";
-
 import { useEffect, useState } from "react";
+import { CiShoppingCart } from "react-icons/ci";
 import { useDispatch } from "react-redux";
 import { toggleCart } from "../../redux/CartReducer/Cart-Slice";
 import * as s from "./headerStyles";
@@ -11,20 +10,21 @@ interface LoginStatus {
 }
 
 export const Header: React.FC = () => {
-  const [login, setLogin] = useState({} as LoginStatus);
+  const [login, setLogin] = useState<LoginStatus>(() => {
+    const loggedData = localStorage.getItem("logged");
+    return loggedData ? JSON.parse(loggedData) : { name: "", logged: false };
+  });
   const [inputValue, setInputValue] = useState("");
 
   const dispatch = useDispatch();
+
   function handleOpenCart() {
     dispatch(toggleCart());
   }
 
   useEffect(() => {
-    const logged = localStorage.getItem("logged");
-    if (logged) {
-      setLogin(JSON.parse(logged));
-    }
-  }, [setLogin]);
+    localStorage.setItem("logged", JSON.stringify(login));
+  }, [login]);
 
   return (
     <s.Header>
@@ -32,12 +32,12 @@ export const Header: React.FC = () => {
         <div>
           {login.logged ? (
             <s.WelcomeText>
-              Welcome <strong>{login.name}</strong>{" "}
+              Welcome <strong>{login.name}</strong>
             </s.WelcomeText>
           ) : (
             ""
           )}
-          <s.PageTitle>Beauty Shop</s.PageTitle>
+          <s.PageTitle>Beauty Store</s.PageTitle>
         </div>
         <div>
           <s.CartContainer isLogged={login.logged}>
@@ -48,9 +48,8 @@ export const Header: React.FC = () => {
               onClick={() => {
                 setLogin({
                   name: "",
-                  logged: !login.logged,
+                  logged: false,
                 });
-                localStorage.setItem("logged", JSON.stringify(login));
               }}
             >
               Logout
@@ -73,10 +72,9 @@ export const Header: React.FC = () => {
                   }
                   setLogin({
                     name: inputValue,
-                    logged: !login.logged,
+                    logged: true,
                   });
                   setInputValue("");
-                  localStorage.setItem("logged", JSON.stringify(login));
                 }}
               >
                 Acessar
