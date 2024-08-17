@@ -9,7 +9,22 @@ export const Header = styled.header`
   align-items: center;
   justify-content: center;
 `;
-
+export const CounterCartItens = styled.span`
+  position: relative;
+  right: -65px;
+  bottom: -28px;
+  background-color: red;
+  color: white;
+  font-weight: 600;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  text-align: center;
+  @media (max-width: 480px) {
+    right: -75px;
+    bottom: -28px;
+  }
+`;
 export const HeaderContainer = styled.div`
   display: flex;
   width: 1000px;

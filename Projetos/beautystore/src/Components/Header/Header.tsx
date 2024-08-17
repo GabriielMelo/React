@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { CiShoppingCart } from "react-icons/ci";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleCart } from "../../redux/CartReducer/Cart-Slice";
+import { RootReducer } from "../../redux/root/rootReducer";
 import * as s from "./headerStyles";
 
 interface LoginStatus {
@@ -15,6 +16,12 @@ export const Header: React.FC = () => {
     return loggedData ? JSON.parse(loggedData) : { name: "", logged: false };
   });
   const [inputValue, setInputValue] = useState("");
+
+  const { cart } = useSelector(
+    (rootReducer: RootReducer) => rootReducer.cartReducer
+  );
+
+  const totalProductsInCart = cart.length;
 
   const dispatch = useDispatch();
 
@@ -41,6 +48,12 @@ export const Header: React.FC = () => {
         </div>
         <div>
           <s.CartContainer isLogged={login.logged}>
+            {totalProductsInCart === 0 ? (
+              ""
+            ) : (
+              <s.CounterCartItens>{totalProductsInCart}</s.CounterCartItens>
+            )}
+
             <s.CartButton onClick={handleOpenCart}>
               <CiShoppingCart />
             </s.CartButton>
